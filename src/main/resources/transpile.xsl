@@ -66,14 +66,14 @@ XML Prague 2019 Conference Proceedings, 57–65. Prague, Czech Republic.
         <xsl:when test="$sf:validation-style = 'next-match'">
           <xsl:call-template name="sf:transpile.next-match">
             <xsl:with-param name="constraint" as="element(sf:constraint)*" select="sf:constraint"/>
-            <xsl:with-param name="streamable" as="xs:boolean" select="$streamable"/>
+            <xsl:with-param name="streamable" as="xs:boolean" select="$sf:streamable"/>
             <xsl:with-param name="burst" as="xs:string?" select="$sf:burst"/>
           </xsl:call-template>
         </xsl:when>
         <xsl:when test="$sf:validation-style = 'accumulator'">
           <xsl:call-template name="sf:transpile.accumulator">
             <xsl:with-param name="constraint" as="element(sf:constraint)*" select="sf:constraint"/>
-            <xsl:with-param name="streamable" as="xs:boolean" select="$streamable"/>
+            <xsl:with-param name="streamable" as="xs:boolean" select="$sf:streamable"/>
             <xsl:with-param name="burst" as="xs:string?" select="$sf:burst"/>
           </xsl:call-template>
         </xsl:when>
