@@ -51,8 +51,8 @@ Transpile to accumulators.
 ## XSLT Schematron Framework and other rule-based validation languages
 
 The framework can be used to implement other rule-based validation languages by pre- and postprocessing the schema
-document and the validation stylesheet respectively. This repository provides an example for the XML Constraints
-Specification Language (XCSL) [JACINTO 2003].
+document and the validation stylesheet respectively. This repository [provides an example](examples/xcsl.xsl) for the
+XML Constraints Specification Language (XCSL) [JACINTO 2003].
 
 ## Authors
 
