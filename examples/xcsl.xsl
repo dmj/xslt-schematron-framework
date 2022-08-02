@@ -26,7 +26,7 @@ SOFTWARE.
 
 This transformation takes an XCSL schema as input and returns a
 validating XSLT stylesheet. It uses the parameter 'validation-style'
-to define to desired validation style used by the XSLT Schematron
+to define the desired validation style to be used by the XSLT Schematron
 Framework transpiler.
 
 The transformation consists of three steps:
@@ -39,6 +39,8 @@ This stylesheet is fed to the XSLT Schematon Framework transpiler. The
 transpiler returns an XSLT stylesheet with the XSLT Schematron
 Framework elements replaced by XSLT instructions depending on the
 selected validation style.
+
+A last post-processing step amends the generated stylesheet if necessary.
 
 -->
 
@@ -87,7 +89,8 @@ selected validation style.
           <xsl:sequence select="node()"/>
           <alias:mode use-accumulators="#all"/>
           <alias:template match="*" mode="Q{{https://doi.org/10.5281/zenodo.4834190#}}validate">
-            <xsl:namespace name="sf">https://doi.org/10.5281/zenodo.4834190#</xsl:namespace>
+            <xsl:namespace
+            name="sf">https://doi.org/10.5281/zenodo.4834190#</xsl:namespace>
             <xsl:for-each select="$accumulators">
               <alias:sequence select="accumulator-after('{.}')"/>
             </xsl:for-each>
